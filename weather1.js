@@ -22,7 +22,7 @@ function afficherMeteo(name, elementId) {  // => fonction qui engloble toute la 
 			const description = data.weather[0].description;    // => On récupére la donnée description et on la stocke dans la variable description
 			const weatherElement = document.getElementById(elementId); // => On récupére l'élement avec l'id elementId et on le stocke dans la variable weatherElement
 			weatherElement.innerHTML = `A  ${name} il fait actuellement ${temperature} 
-                             degrés Celsius avec ${description}.`;                // => On injecte du contenu HTML dans la variable weatherElement avec une chaine de caractére concatenée avec les données nom, temp et description
+                             degrés Celsius.`;                // => On injecte du contenu HTML dans la variable weatherElement avec une chaine de caractére concatenée avec les données nom, temp et description             avec ${description}
 		})
     
 		.catch( err => {                                                // => En cas d'erreur si la promesse est rompue, on "attrape" l'erreur
@@ -30,3 +30,4 @@ function afficherMeteo(name, elementId) {  // => fonction qui engloble toute la 
 			weatherElement.innerHTML = `Erreur ${err.message}`;           // => On stocke un message d'erreur dans la variable weatherElement
 		});
 }
+
